@@ -1,0 +1,1 @@
+exports.isPallindrom = string => true;

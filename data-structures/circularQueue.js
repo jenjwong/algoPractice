@@ -1,4 +1,4 @@
-class CircularArray {
+class CircularQueue {
   constructor(size) {
     this.storage = new Array(size);
     this.length = this.storage.length;

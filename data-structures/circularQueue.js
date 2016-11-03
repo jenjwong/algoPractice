@@ -50,29 +50,29 @@ class CircularQueue {
   }
 }
 
-const circArray = new CircularArray(3);
-circArray.enqueue('a');
-circArray.enqueue('b');
-circArray.enqueue('c');
-circArray.enqueue('d'); // array is full error message
-console.log(circArray.dequeue()); // a
-console.log(circArray.dequeue()); // b
-circArray.enqueue('f');
-circArray.enqueue('g');
-circArray.enqueue('h'); //array is full error message
-console.log(circArray.storage) //['f', 'g', 'c']
-circArray.resize(5);
-console.log('resized', circArray.storage, circArray.storage.length) //['c', 'f', 'g', ...]
-console.log(circArray.enqueue('i')) // ['c', 'f', 'g', 'i', ...]
-console.log(circArray.enqueue('j')) // ['c', 'f', 'g', 'i', 'j', ...]
-console.log(circArray.enqueue('k')) // array is full error message
-console.log(circArray.dequeue())
-console.log(circArray.dequeue())
-console.log(circArray.resize(6))
-console.log('resized', circArray.storage, circArray.storage.length) //['c', 'f', 'g', ...]
-console.log(circArray.dequeue())
-circArray.enqueue('l')
-circArray.enqueue('m')
-circArray.enqueue('o')
-circArray.enqueue('p') //error
-console.log(circArray.storage)
+const circQueue = new CircularQueue(3);
+circQueue.enqueue('a');
+circQueue.enqueue('b');
+circQueue.enqueue('c');
+circQueue.enqueue('d'); // array is full error message
+console.log(circQueue.dequeue()); // a
+console.log(circQueue.dequeue()); // b
+circQueue.enqueue('f');
+circQueue.enqueue('g');
+circQueue.enqueue('h'); //array is full error message
+console.log(circQueue.storage) //['f', 'g', 'c']
+circQueue.resize(5);
+console.log('resized', circQueue.storage, circQueue.storage.length) //['c', 'f', 'g', ...]
+console.log(circQueue.enqueue('i')) // ['c', 'f', 'g', 'i', ...]
+console.log(circQueue.enqueue('j')) // ['c', 'f', 'g', 'i', 'j', ...]
+console.log(circQueue.enqueue('k')) // array is full error message
+console.log(circQueue.dequeue())
+console.log(circQueue.dequeue())
+console.log(circQueue.resize(6))
+console.log('resized', circQueue.storage, circQueue.storage.length) //['c', 'f', 'g', ...]
+console.log(circQueue.dequeue())
+circQueue.enqueue('l')
+circQueue.enqueue('m')
+circQueue.enqueue('o')
+circQueue.enqueue('p') //error
+console.log(circQueue.storage)

@@ -2,26 +2,15 @@
 // FOLLOW UP
 // ImplementafunctionpopAt(int index)whichperformsapopoperationonaspecificsub-stack. Hints: #64, #87
 
-// class Stack {
-//   constructor() {
-//     this.count = 0;
-//     this.storage = {};
-//   }
-//
-//   push(val) {
-//     this.count += 1;
-//     this.storage[this.count] = val;
-//   }
-//
-//   pop() {
-//     if (this.count > 0) {
-//       const popped = this.storage[this.count];
-//       delete this.storage[this.count];
-//       this.count -= 1;
-//       return popped;
-//     }
-//   }
-// }
+// Input: integers
+// Output: data structure described above
+// Contraints: none
+// Edge-cases:
+//   push: one stack is full and need to use next stack
+//   pop: one stack is empty and need to use prev stack
+//   creating first stack
+
+// constant time and linear space
 
 class PlateStack {
   constructor(limit) {

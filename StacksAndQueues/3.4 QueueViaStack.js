@@ -83,7 +83,7 @@ class QueueViaStack {
 
   add(val) {
     this.firstStack.push(val);
-    return va;
+    return val;
   }
 
   shift() {

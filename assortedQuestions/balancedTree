@@ -1,0 +1,74 @@
+// Write a function to see if a binary tree ↴ is "superbalanced" (a new tree property we just made up).
+// A tree is "superbalanced" if the difference between the depths of any two leaf nodes ↴ is no greater than one.
+
+// Here's a sample binary tree node class:
+
+function BinaryTreeNode(value) {
+    this.value = value;
+    this.left  = null;
+    this.right = null;
+}
+
+BinaryTreeNode.prototype.insertLeft = function(value) {
+    this.left = new BinaryTreeNode(value);
+    return this.left;
+};
+
+BinaryTreeNode.prototype.insertRight = function(value) {
+    this.right = new BinaryTreeNode(value);
+    return this.right;
+};
+
+// fn takes tree
+// min variable
+// max variable
+// depth variable set 0
+// create queue
+// add root node to queue
+// while there are nodes in the queue
+  // if there are no children
+  // update min and max of depth
+  // if there are children
+    // enqueu them and set their depth to current node's depth plus one
+// subtract the max - min
+// check if it's greater than one
+// return boolean of check
+
+const superBalancedTree = new BinaryTreeNode(5);
+superBalancedTree.insertLeft(3);
+superBalancedTree.insertRight(9);
+
+
+const imBalancedTree = new BinaryTreeNode(5);
+imBalancedTree.insertLeft(3);
+imBalancedTree.insertRight(9);
+imBalancedTree.left.insertLeft(2);
+imBalancedTree.left.left.insertLeft(1);
+
+function superBalenced(root) {
+  let min = Infinity;
+  let max = -Infinity;
+  let node = {depth: 0, tree: root};
+  let queue = [node];
+  while (node = queue.shift()) {
+    if (node.tree.left === null) {
+      min = Math.min(min, node.depth);
+      max = Math.max(max, node.depth);
+    }
+    if (node.tree.right === null) {
+      min = Math.min(min, node.depth);
+      max = Math.max(max, node.depth);
+    }
+    if (node.tree.left !== null) {
+      queue.push({depth: node.depth + 1, tree: node.tree.left});
+    }
+    if (node.tree.right !== null) {
+      queue.push({depth: node.depth + 1, tree: node.tree.right});
+    }
+  }
+  return max - min <= 1;
+}
+
+
+console.log(superBalenced(superBalancedTree));
+console.log(superBalenced(imBalancedTree));
